@@ -1,4 +1,6 @@
 % compile mex file
+prevDir = pwd;
+cd(fileparts(mfilename('fullpath')));
 mex mex/perform_front_propagation_2d.cpp mex/perform_front_propagation_2d_mex.cpp mex/fheap/fib.cpp 
 mex mex/perform_front_propagation_3d.cpp mex/perform_front_propagation_3d_mex.cpp  mex/fheap/fib.cpp 
 mex mex/perform_circular_front_propagation_2d.cpp mex/perform_front_propagation_2d.cpp mex/fheap/fib.cpp 
@@ -29,4 +31,4 @@ for i=1:length(files)
     str = [str rep files{i} ' '];
 end
 eval(str);
-
+cd(prevDir);
